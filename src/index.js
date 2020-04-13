@@ -32,7 +32,7 @@ io.on('connection',(socket)=>{
 
    socket.join(user.room)
 
-   socket.emit('message',generateMsg('Admin',`Hey, "${user.username}" welcome to WeChat`))   
+   socket.emit('message',generateMsg('Admin',`Hi ${user.username}, welcome to WeChat`))   
    socket.broadcast.to(user.room).emit('message',generateMsg('Admin',`${user.username} has joined`))
    io.to(user.room).emit('roomData',{
        room: user.room,
